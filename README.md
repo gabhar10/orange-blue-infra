@@ -36,6 +36,16 @@ The architecture ensures instances remain completely isolated from the internet 
 
 ![Architecture Diagram](./architecture.png)
 
+## Testing Notes & Known Issues
+
+⚠️ **Disclaimer**: This infrastructure was tested on **Linux ARM64** architecture. While the Terraform configuration is platform-agnostic, testing was conducted specifically on ARM64 systems.
+
+**Known Issues:**
+- In rare conditions during testing, VMs may enter a faulty state that requires redeployment
+- These intermittent issues appear to be related to cloud-init timing or AWS service initialization
+- Further investigation of these edge cases would require more than the 2 hours prescribed for this assignment
+- If you encounter deployment issues, try running `terraform destroy` followed by `terraform apply` again
+
 ## SSH Key Setup Implementation
 
 The infrastructure implements an optimized SSH key distribution mechanism leveraging Ubuntu 24.04's built-in `ssm-user` creation:
